@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
           <p>You have the right to access, correct, or delete your personal data at any time. You can also opt out of certain data collection practices through your account settings.</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">5. Contact Us</h2>
-          <p>If you have questions about this privacy policy, please contact us at privacy@wandr.app.</p>
+          <p>If you have questions about this privacy policy, please contact us at privacy@joyplus.app.</p>
         </div>
       </div>
     </div>

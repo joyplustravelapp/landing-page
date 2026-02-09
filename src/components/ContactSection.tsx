@@ -11,16 +11,19 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-card">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 md:py-32 bg-card relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-secondary/5 rounded-full blur-[100px]" />
+
+      <div className="container mx-auto px-4 relative">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-12"
           >
-            <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">Contact</p>
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Contact</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               Get in touch
             </h2>
@@ -33,10 +36,11 @@ const ContactSection = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center p-12 rounded-2xl border border-border bg-background"
+              transition={{ ease: [0.22, 1, 0.36, 1] }}
+              className="text-center p-12 rounded-2xl glass"
             >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Send className="w-7 h-7 text-primary" />
+              <div className="w-16 h-16 rounded-full bg-gradient-ocean flex items-center justify-center mx-auto mb-4">
+                <Send className="w-7 h-7 text-primary-foreground" />
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-2">Message sent!</h3>
               <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
@@ -46,8 +50,9 @@ const ContactSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ ease: [0.22, 1, 0.36, 1] }}
               onSubmit={handleSubmit}
-              className="space-y-5 rounded-2xl border border-border bg-background p-8"
+              className="space-y-5 rounded-2xl glass p-8"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
@@ -56,7 +61,7 @@ const ContactSection = () => {
                     required
                     type="text"
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-sm transition-all duration-300"
                   />
                 </div>
                 <div>
@@ -65,7 +70,7 @@ const ContactSection = () => {
                     required
                     type="email"
                     placeholder="you@email.com"
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-sm transition-all duration-300"
                   />
                 </div>
               </div>
@@ -75,12 +80,12 @@ const ContactSection = () => {
                   required
                   rows={5}
                   placeholder="What's on your mind?"
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-sm resize-none transition-all duration-300"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-auto px-8 py-3 rounded-xl bg-gradient-warm text-primary-foreground font-semibold text-sm hover:scale-[1.02] transition-transform shadow-elevated"
+                className="w-full sm:w-auto px-8 py-3 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow hover:scale-[1.02] transition-all duration-500"
               >
                 Send Message
               </button>
