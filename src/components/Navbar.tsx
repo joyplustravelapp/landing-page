@@ -11,8 +11,6 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -22,10 +20,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleDownload = () => {
-    window.open(APP_STORE_URL, "_blank", "noopener,noreferrer");
-  };
 
   return (
     <motion.nav
@@ -59,13 +53,13 @@ const Navbar = () => {
           ))}
         </div>
 
-        <button
-          onClick={handleDownload}
+        <Link
+          to="/download"
           className="hidden md:flex items-center gap-2 btn-press px-5 py-2 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow hover:scale-[1.02] active:scale-[0.96] transition-all duration-300"
         >
           <Download className="w-4 h-4" />
           Download now!
-        </button>
+        </Link>
 
         {/* Mobile toggle */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground p-1">
@@ -94,16 +88,14 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <button
-                onClick={() => {
-                  setOpen(false);
-                  handleDownload();
-                }}
+              <Link
+                to="/download"
+                onClick={() => setOpen(false)}
                 className="btn-press w-full mt-3 px-5 py-3 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 Download now!
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
