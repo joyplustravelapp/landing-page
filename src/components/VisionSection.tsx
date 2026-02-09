@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Utensils, Signal, Split, Phone } from "lucide-react";
+import { MapPin, Utensils, Signal, Split, MessageCircle } from "lucide-react";
 import travelersImg from "@/assets/travelers-together.jpg";
 
 const features = [
@@ -7,7 +7,7 @@ const features = [
   { icon: Utensils, text: "Recommends the best street food tour tonight" },
   { icon: Signal, text: "Gets you local data in 30 seconds" },
   { icon: Split, text: "Splits the tuk-tuk cost with your new travel buddy" },
-  { icon: Phone, text: "Has emergency contacts if anything goes wrong" },
+  { icon: MessageCircle, text: "Get travel tips from the community" },
 ];
 
 const VisionSection = () => {
