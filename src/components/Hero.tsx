@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import appStoreBadge from "@/assets/app-store-badge.svg";
-import googlePlayBadge from "@/assets/google-play-badge.svg";
+import googlePlayBadge from "@/assets/google-play-badge.png";
 
 const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
 const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.joyplus.travel&pcampaignid=web_share";

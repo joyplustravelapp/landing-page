@@ -12,20 +12,38 @@ const PrivacyPolicy = () => {
         <div className="prose prose-neutral max-w-none space-y-6 text-muted-foreground">
           <p className="text-foreground font-medium">Last updated: February 9, 2026</p>
           
+          {/* 
+            TO EDIT: Replace the placeholder sections below with your actual privacy policy content.
+            Each <h2> is a section heading and each <p> is the section body.
+            You can add, remove, or modify sections as needed.
+          */}
+
           <h2 className="font-display text-xl font-bold text-foreground">1. Information We Collect</h2>
-          <p>We collect information you provide directly, such as your name, email address, and travel preferences when you create an account or contact us. We also collect usage data including app interactions, device information, and location data (with your permission).</p>
+          <p>[Add your privacy policy content here — describe what personal information you collect from users, including data collected automatically and data users provide directly.]</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">2. How We Use Your Information</h2>
-          <p>We use your information to provide and improve our services, connect you with other travelers, personalize your experience, and ensure the safety features work properly. We never sell your personal data to third parties.</p>
+          <p>[Add details about how you use the collected information — service delivery, personalization, communication, analytics, etc.]</p>
 
-          <h2 className="font-display text-xl font-bold text-foreground">3. Data Security</h2>
-          <p>We implement industry-standard security measures including encryption, secure servers, and regular security audits to protect your personal information.</p>
+          <h2 className="font-display text-xl font-bold text-foreground">3. Data Sharing & Third Parties</h2>
+          <p>[Describe if and when you share data with third parties, including service providers, legal obligations, etc.]</p>
 
-          <h2 className="font-display text-xl font-bold text-foreground">4. Your Rights</h2>
-          <p>You have the right to access, correct, or delete your personal data at any time. You can also opt out of certain data collection practices through your account settings.</p>
+          <h2 className="font-display text-xl font-bold text-foreground">4. Data Security</h2>
+          <p>[Explain the security measures you implement to protect user data.]</p>
 
-          <h2 className="font-display text-xl font-bold text-foreground">5. Contact Us</h2>
-          <p>If you have questions about this privacy policy, please contact us at privacy@joyplus.app.</p>
+          <h2 className="font-display text-xl font-bold text-foreground">5. Your Rights</h2>
+          <p>[Describe user rights regarding their data — access, correction, deletion, portability, etc.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">6. Cookies & Tracking</h2>
+          <p>[Explain your use of cookies, analytics tools, and tracking technologies.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">7. Children's Privacy</h2>
+          <p>[State your policy regarding children's data and age requirements.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">8. Changes to This Policy</h2>
+          <p>[Explain how you will notify users of policy changes.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">9. Contact Us</h2>
+          <p>If you have questions about this privacy policy, please contact us at <a href="mailto:support@joyplustravelapp.com" className="text-primary hover:underline">support@joyplustravelapp.com</a>.</p>
         </div>
       </div>
     </div>
