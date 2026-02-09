@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import travelVisionImg from "@/assets/travel-vision.jpg";
@@ -100,6 +101,11 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? blogContent[slug] : null;
 
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [slug]);
+
   if (!post) {
     return (
       <div className="min-h-screen bg-background">
@@ -129,7 +135,19 @@ const BlogPost = () => {
             animate={{ opacity: 1, y: 0 }}
             className="rounded-2xl glass p-8 md:p-12"
           >
-            <Link to="/#blog" className="btn-press inline-flex items-center gap-1.5 text-primary text-sm font-medium mb-6 hover:gap-2.5 transition-all duration-300">
+            <Link
+              to="/"
+              onClick={() => {
+                // Delay scroll to ensure navigation completes
+                setTimeout(() => {
+                  const blogSection = document.getElementById('blog');
+                  if (blogSection) {
+                    blogSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+              className="btn-press inline-flex items-center gap-1.5 text-primary text-sm font-medium mb-6 hover:gap-2.5 transition-all duration-300"
+            >
               <ArrowLeft className="w-4 h-4" /> Back to blog
             </Link>
 
