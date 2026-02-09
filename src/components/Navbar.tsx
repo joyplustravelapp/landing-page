@@ -28,14 +28,17 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-4 left-4 right-4 z-50 rounded-2xl transition-all duration-500 ${
-        scrolled ? "glass shadow-glow" : "glass-subtle"
-      }`}
-    >
+    <>
+      {/* Solid cover behind the floating navbar gap */}
+      <div className="fixed top-0 left-0 right-0 h-5 bg-background z-50" />
+      <motion.nav
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-4 left-4 right-4 z-50 rounded-2xl transition-all duration-500 ${
+          scrolled ? "glass shadow-glow" : "glass-subtle"
+        }`}
+      >
       <div className="flex items-center justify-between h-14 px-5">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={logo} alt="Joy Plus" className="w-8 h-8 rounded-lg object-cover" />
@@ -107,6 +110,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </motion.nav>
+    </>
   );
 };
 
