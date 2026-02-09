@@ -51,6 +51,49 @@ const blogContent: Record<string, { title: string; category: string; date: strin
       "Keep in touch. The friendships you make while traveling can last a lifetime. Use Joy Plus to stay connected with your travel friends even after you've moved on to different destinations.",
     ],
   },
+  "best-coworking-bali": {
+    title: "Top 5 Coworking Spaces in Bali for Digital Nomads",
+    category: "Digital Nomad",
+    date: "Jan 15, 2026",
+    content: [
+      "Bali has become the digital nomad capital of the world, and for good reason. Amazing weather, affordable living, and some of the best coworking spaces you'll find anywhere.",
+      "1. Dojo Bali (Canggu): The OG of Bali coworking. Fast WiFi, pool access, and an incredible community. Monthly passes start around $200.",
+      "2. Outpost (Canggu & Ubud): Premium spaces with standing desks, phone booths, and networking events. Their Ubud location offers stunning rice paddy views.",
+      "3. Hubud (Ubud): Set in a beautiful bamboo building, Hubud combines productivity with Balinese charm. Regular workshops and skill-sharing sessions.",
+      "4. BWork (Seminyak): Modern, air-conditioned space perfect for those who need a more corporate-style environment. Great coffee shop attached.",
+      "5. Tribal (Canggu): Budget-friendly option with a lively atmosphere. Popular with younger digital nomads and perfect for networking.",
+      "Pro tip: Use Joy Plus to connect with other digital nomads at these spaces. Many users share reviews and organize coworking meetups through the app.",
+    ],
+  },
+  "hidden-gems-lisbon": {
+    title: "Hidden Gems in Lisbon: Beyond the Tourist Trail",
+    category: "Destinations",
+    date: "Jan 10, 2026",
+    content: [
+      "Lisbon is one of Europe's most charming capitals, but the best experiences lie beyond the usual tourist spots. Here are our favorite hidden gems.",
+      "LX Factory: This creative hub in a former industrial complex is packed with independent shops, galleries, and some of the best brunch spots in the city. Visit on a Sunday for the weekly book market.",
+      "Miradouro da Graça: While most tourists flock to Miradouro da Senhora do Monte, this nearby viewpoint offers equally stunning views with a fraction of the crowds.",
+      "Mouraria: This historic neighborhood is the birthplace of fado music. Wander the narrow streets, listen to music spilling from tascas, and discover street art at every turn.",
+      "Mercado da Ribeira (Time Out Market): Yes, it's well-known, but arrive early on a weekday morning to experience the original fresh market section that most tourists miss.",
+      "Costa da Caparica: Just 30 minutes from the city center, this stretch of beaches offers clean Atlantic waters and incredible seafood restaurants. Take the transpraia mini-train to find your perfect quiet spot.",
+      "Connect with local travelers on Joy Plus to discover even more hidden spots that only locals know about.",
+    ],
+  },
+  "cultural-etiquette-japan": {
+    title: "Cultural Etiquette in Japan: What Every Traveler Should Know",
+    category: "Culture",
+    date: "Jan 5, 2026",
+    content: [
+      "Japan is a country where tradition and modernity coexist beautifully. Understanding cultural etiquette will enrich your travel experience and show respect to your hosts.",
+      "Shoes off: Remove your shoes when entering homes, many restaurants, and some temples. You'll usually find slippers provided at the entrance.",
+      "Bowing: A slight bow is the standard greeting. The deeper the bow, the more respect you're showing. As a tourist, a small nod is perfectly acceptable.",
+      "Chopstick etiquette: Never stick chopsticks upright in rice (this resembles a funeral ritual). Don't pass food directly from chopstick to chopstick either.",
+      "Quiet on public transport: Talking on the phone or speaking loudly on trains and buses is considered very rude. Keep conversations to a whisper.",
+      "Tipping: Don't tip in Japan — it can actually be seen as insulting. Excellent service is the standard, not the exception.",
+      "Onsen (hot spring) etiquette: Wash thoroughly before entering the bath. Tattoos may be prohibited in some traditional onsen, so check beforehand.",
+      "Use Joy Plus to connect with experienced Japan travelers who can share more insider tips and cultural insights before your trip.",
+    ],
+  },
 };
 
 const BlogPost = () => {

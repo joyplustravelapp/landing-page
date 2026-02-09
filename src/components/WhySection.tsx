@@ -6,7 +6,7 @@ const painPoints = [
     icon: Users,
     title: "People",
     description: "Finding buddies, making plans, staying in touch",
-    gradient: "from-primary to-accent",
+    gradient: "from-secondary to-primary",
   },
   {
     icon: Compass,
@@ -59,7 +59,7 @@ const WhySection = () => {
             Every trip requires planning
           </h2>
           <p className="text-muted-foreground text-lg">
-            We decided to create the <span className="text-foreground font-semibold">ultimate all in one travel app</span>
+            That's why we decided to create the <span className="text-foreground font-semibold">ultimate all in one travel app</span>
           </p>
         </motion.div>
 

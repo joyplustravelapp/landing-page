@@ -1,10 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/joy-plus-logo.jpg";
-import appStoreBadge from "@/assets/app-store-badge.svg";
-import googlePlayBadge from "@/assets/google-play-badge.svg";
 
 const navLinks = [
   { label: "Why Us", href: "#why" },
@@ -14,7 +12,6 @@ const navLinks = [
 ];
 
 const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
-const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.joyplus.travel&pcampaignid=web_share";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -25,6 +22,13 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToDownload = () => {
+    const hero = document.getElementById("download");
+    if (hero) {
+      hero.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.nav
@@ -56,14 +60,13 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-2">
-          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-9 hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
-            <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
-          </a>
-          <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-9 hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
-            <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
-          </a>
-        </div>
+        <button
+          onClick={scrollToDownload}
+          className="hidden md:flex items-center gap-2 btn-press px-5 py-2 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow hover:scale-[1.02] active:scale-[0.96] transition-all duration-300"
+        >
+          <Download className="w-4 h-4" />
+          Download now!
+        </button>
 
         {/* Mobile toggle */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground p-1">
@@ -92,14 +95,16 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="flex gap-2 mt-3">
-                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-11 flex-1 flex justify-center hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
-                  <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
-                </a>
-                <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-11 flex-1 flex justify-center hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
-                  <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
-                </a>
-              </div>
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  scrollToDownload();
+                }}
+                className="btn-press w-full mt-3 px-5 py-3 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Download now!
+              </button>
             </div>
           </motion.div>
         )}

@@ -40,7 +40,7 @@ const Hero = () => {
             transition={{ delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 font-body leading-relaxed"
           >
-            Meet fellow travelers, discover activities, stay connected, and travel safely — all from a single platform.
+            Meet fellow travelers, discover activities, stay connected, and travel safely. All in one app.
           </motion.p>
 
           <motion.div
@@ -53,17 +53,17 @@ const Hero = () => {
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-press h-14 hover:shadow-glow transition-all duration-300 rounded-xl overflow-hidden"
+              className="btn-press inline-block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-xl"
             >
-              <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
+              <img src={appStoreBadge} alt="Download on the App Store" className="h-[52px] w-auto" />
             </a>
             <a
               href={GOOGLE_PLAY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-press h-14 hover:shadow-glow transition-all duration-300 rounded-xl overflow-hidden"
+              className="btn-press inline-block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-xl"
             >
-              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
+              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[52px] w-auto" />
             </a>
           </motion.div>
         </div>

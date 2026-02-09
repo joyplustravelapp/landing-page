@@ -1,16 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import travelVisionImg from "@/assets/travel-vision.jpg";
 
-const categories = [
-  { name: "Solo Tips", count: 12 },
-  { name: "Destinations", count: 8 },
-  { name: "Safety", count: 6 },
-  { name: "Budget Travel", count: 10 },
-  { name: "Culture", count: 5 },
-  { name: "Digital Nomad", count: 7 },
-];
+const categories = ["All", "Solo Tips", "Destinations", "Safety", "Budget Travel", "Culture", "Digital Nomad"];
 
 const posts = [
   {
@@ -34,9 +28,36 @@ const posts = [
     excerpt: "Loneliness doesn't have to be part of solo travel. Here are proven ways to connect with others.",
     date: "Jan 20, 2026",
   },
+  {
+    slug: "best-coworking-bali",
+    title: "Top 5 Coworking Spaces in Bali for Digital Nomads",
+    category: "Digital Nomad",
+    excerpt: "Fast WiFi, great coffee, and ocean views — the best spots to work remotely in Bali.",
+    date: "Jan 15, 2026",
+  },
+  {
+    slug: "hidden-gems-lisbon",
+    title: "Hidden Gems in Lisbon: Beyond the Tourist Trail",
+    category: "Destinations",
+    excerpt: "Skip the crowds and discover Lisbon's best-kept secrets, from local tascas to secret viewpoints.",
+    date: "Jan 10, 2026",
+  },
+  {
+    slug: "cultural-etiquette-japan",
+    title: "Cultural Etiquette in Japan: What Every Traveler Should Know",
+    category: "Culture",
+    excerpt: "Avoid common faux pas and show respect with this essential guide to Japanese customs.",
+    date: "Jan 5, 2026",
+  },
 ];
 
 const BlogSection = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredPosts = activeCategory === "All"
+    ? posts
+    : posts.filter((post) => post.category === activeCategory);
+
   return (
     <section id="blog" className="py-24 md:py-32 bg-background relative overflow-hidden">
       <div className="absolute top-1/2 -translate-y-1/2 -right-32 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
@@ -64,22 +85,26 @@ const BlogSection = () => {
         >
           {categories.map((cat) => (
             <button
-              key={cat.name}
-              className="btn-press px-4 py-2 rounded-full glass text-sm font-medium text-foreground hover:shadow-glow hover:text-primary transition-all duration-300"
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`btn-press px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeCategory === cat
+                  ? "bg-gradient-glow text-primary-foreground shadow-glow"
+                  : "glass text-foreground hover:shadow-glow hover:text-primary"
+              }`}
             >
-              {cat.name} <span className="text-muted-foreground ml-1">({cat.count})</span>
+              {cat}
             </button>
           ))}
         </motion.div>
 
         {/* Posts grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {posts.map((post, i) => (
+          {filteredPosts.map((post, i) => (
             <motion.article
-              key={i}
+              key={post.slug}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               <Link
@@ -110,6 +135,16 @@ const BlogSection = () => {
             </motion.article>
           ))}
         </div>
+
+        {filteredPosts.length === 0 && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center text-muted-foreground text-lg py-12"
+          >
+            No articles in this category yet. Stay tuned!
+          </motion.p>
+        )}
       </div>
     </section>
   );
