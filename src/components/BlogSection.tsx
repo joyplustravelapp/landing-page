@@ -2,7 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import travelVisionImg from "@/assets/travel-vision.jpg";
+import blogSafetyImg from "@/assets/blog-safety-tips.jpg";
+import blogBangkokImg from "@/assets/blog-bangkok-budget.jpg";
+import blogFriendsImg from "@/assets/blog-making-friends.jpg";
+import blogBaliImg from "@/assets/blog-coworking-bali.jpg";
+import blogLisbonImg from "@/assets/blog-lisbon-gems.jpg";
+import blogJapanImg from "@/assets/blog-japan-culture.jpg";
 
 const categories = ["All", "Solo Tips", "Destinations", "Safety", "Budget Travel", "Culture", "Digital Nomad"];
 
@@ -13,6 +18,7 @@ const posts = [
     category: "Safety",
     excerpt: "From choosing the right accommodation to staying connected, here's everything you need to know.",
     date: "Feb 5, 2026",
+    image: blogSafetyImg,
   },
   {
     slug: "bangkok-budget-guide",
@@ -20,6 +26,7 @@ const posts = [
     category: "Budget Travel",
     excerpt: "Street food, temples, and tuk-tuks — experience the best of Bangkok without breaking the bank.",
     date: "Jan 28, 2026",
+    image: blogBangkokImg,
   },
   {
     slug: "making-friends-solo-travel",
@@ -27,6 +34,7 @@ const posts = [
     category: "Solo Tips",
     excerpt: "Loneliness doesn't have to be part of solo travel. Here are proven ways to connect with others.",
     date: "Jan 20, 2026",
+    image: blogFriendsImg,
   },
   {
     slug: "best-coworking-bali",
@@ -34,6 +42,7 @@ const posts = [
     category: "Digital Nomad",
     excerpt: "Fast WiFi, great coffee, and ocean views — the best spots to work remotely in Bali.",
     date: "Jan 15, 2026",
+    image: blogBaliImg,
   },
   {
     slug: "hidden-gems-lisbon",
@@ -41,6 +50,7 @@ const posts = [
     category: "Destinations",
     excerpt: "Skip the crowds and discover Lisbon's best-kept secrets, from local tascas to secret viewpoints.",
     date: "Jan 10, 2026",
+    image: blogLisbonImg,
   },
   {
     slug: "cultural-etiquette-japan",
@@ -48,6 +58,7 @@ const posts = [
     category: "Culture",
     excerpt: "Avoid common faux pas and show respect with this essential guide to Japanese customs.",
     date: "Jan 5, 2026",
+    image: blogJapanImg,
   },
 ];
 
@@ -113,7 +124,7 @@ const BlogSection = () => {
               >
                 <div className="h-48 overflow-hidden">
                   <img
-                    src={travelVisionImg}
+                    src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
