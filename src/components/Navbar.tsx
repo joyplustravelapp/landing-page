@@ -35,10 +35,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50"
     >
       {/* Full-width solid background that covers any external content */}
-      <div className={`mx-auto transition-all duration-500 ${
-        scrolled 
-          ? "bg-card/95 border-b border-border/50 shadow-glow backdrop-blur-xl" 
-          : "bg-gradient-to-b from-background/90 to-transparent backdrop-blur-sm"
+      <div className={`mx-auto transition-all duration-500 bg-card/95 border-b border-border/50 backdrop-blur-xl ${
+        scrolled ? "shadow-glow" : ""
       }`}>
       <div className="flex items-center justify-between h-16 px-6 max-w-7xl mx-auto">
         <Link to="/" className="flex items-center gap-2.5">
