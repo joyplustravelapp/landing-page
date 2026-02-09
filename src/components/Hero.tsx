@@ -63,7 +63,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="btn-press inline-block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-xl"
             >
-              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[52px] w-auto" />
+              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[52px] w-[175px] object-contain" />
             </a>
           </motion.div>
         </div>

@@ -33,9 +33,8 @@ const VisionSection = () => {
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
             </div>
-            {/* Floating accent */}
-            <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-2xl bg-gradient-glow animate-float opacity-60 blur-sm" />
-            <div className="absolute -top-3 -left-3 w-16 h-16 rounded-2xl bg-gradient-lime animate-float opacity-40 blur-sm" style={{ animationDelay: "1s" }} />
+            {/* Subtle shadow overlay for integration */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-card/40 via-transparent to-transparent pointer-events-none" />
           </motion.div>
 
           {/* Content */}
