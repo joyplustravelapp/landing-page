@@ -75,11 +75,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground">Download</h4>
             <div className="space-y-3">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-lg overflow-hidden">
-                <img src={appStoreBadge} alt="Download on the App Store" className="h-[44px] w-auto rounded-md" />
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300">
+                <img src={appStoreBadge} alt="Download on the App Store" className="h-[44px] w-auto" />
               </a>
-              <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-lg overflow-hidden">
-                <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[44px] w-auto rounded-md" />
+              <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300">
+                <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[44px] w-auto" />
               </a>
             </div>
           </div>
