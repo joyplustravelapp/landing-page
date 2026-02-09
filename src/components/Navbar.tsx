@@ -23,11 +23,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToDownload = () => {
-    const hero = document.getElementById("download");
-    if (hero) {
-      hero.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleDownload = () => {
+    window.open(APP_STORE_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -61,7 +58,7 @@ const Navbar = () => {
         </div>
 
         <button
-          onClick={scrollToDownload}
+          onClick={handleDownload}
           className="hidden md:flex items-center gap-2 btn-press px-5 py-2 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow hover:scale-[1.02] active:scale-[0.96] transition-all duration-300"
         >
           <Download className="w-4 h-4" />
@@ -98,7 +95,7 @@ const Navbar = () => {
               <button
                 onClick={() => {
                   setOpen(false);
-                  scrollToDownload();
+                  handleDownload();
                 }}
                 className="btn-press w-full mt-3 px-5 py-3 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2"
               >
