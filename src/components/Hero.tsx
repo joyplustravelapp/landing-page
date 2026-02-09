@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import appStoreBadge from "@/assets/app-store-badge.svg";
-import googlePlayBadge from "@/assets/google-play-badge.png";
+import googlePlayBadge from "@/assets/google-play-badge.svg";
 
 const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
 const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.joyplus.travel&pcampaignid=web_share";
@@ -47,7 +47,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap items-center gap-4"
           >
             <a
               href={APP_STORE_URL}
@@ -55,7 +55,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="btn-press inline-block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-xl"
             >
-              <img src={appStoreBadge} alt="Download on the App Store" className="h-[52px] w-auto" />
+              <img src={appStoreBadge} alt="Download on the App Store" className="h-[52px] w-auto rounded-lg" />
             </a>
             <a
               href={GOOGLE_PLAY_URL}
@@ -63,7 +63,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="btn-press inline-block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-xl"
             >
-              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[52px] w-[175px] object-contain" />
+              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[52px] w-auto rounded-lg" />
             </a>
           </motion.div>
         </div>
