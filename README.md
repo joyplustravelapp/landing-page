@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# Joy Plus Landing Page
 
-## Project info
+Landing page for Joy Plus - a travel companion app that connects like-minded travelers and transforms solo adventures into shared experiences.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🌍 About
 
-## How can I edit this code?
+Joy Plus helps travelers find their perfect travel companions, making every journey more memorable and enjoyable.
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Routing**: React Router
+- **Animations**: Framer Motion
+- **State Management**: TanStack Query
+- **Backend**: Supabase
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 📦 Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ and npm installed ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone git@github.com:joyplustravelapp/landing-page.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd landing-page
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚢 Deployment
 
-## What technologies are used for this project?
+The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
 
-This project is built with:
+**Live URL**: https://joyplustravelapp.github.io/landing-page/
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📱 App Store Links
 
-## How can I deploy this project?
+- [Download on App Store](https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB)
+- [Get it on Google Play](https://play.google.com/store/apps/details?id=com.joyplus.travel)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 📄 License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+All rights reserved © Joy Plus
