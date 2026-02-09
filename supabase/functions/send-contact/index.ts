@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -22,7 +21,6 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { name, email, message }: ContactRequest = await req.json();
 
-    // Validate inputs
     if (!name || !email || !message) {
       throw new Error("Missing required fields: name, email, message");
     }
@@ -38,7 +36,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`Contact form submission from ${name} (${email})`);
 
-    // Store in database
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
@@ -52,33 +49,6 @@ const handler = async (req: Request): Promise<Response> => {
     if (dbError) {
       console.error("Database error:", dbError);
       throw new Error("Failed to save message");
-    }
-
-    // Try to send email notification via Resend
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
-    if (resendApiKey) {
-      try {
-        const resend = new Resend(resendApiKey);
-        await resend.emails.send({
-          from: "Joy Plus Contact <onboarding@resend.dev>",
-          to: ["joyplustravelapp@gmail.com"],
-          subject: `New contact from ${name}`,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g, "<br>")}</p>
-            <hr>
-            <p style="color: #888; font-size: 12px;">Sent from Joy Plus website contact form</p>
-          `,
-        });
-        console.log("Email notification sent successfully");
-      } catch (emailError) {
-        console.error("Email send error (message still saved):", emailError);
-      }
-    } else {
-      console.log("RESEND_API_KEY not configured, skipping email notification");
     }
 
     return new Response(JSON.stringify({ success: true }), {
