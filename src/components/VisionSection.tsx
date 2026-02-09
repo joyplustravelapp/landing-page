@@ -6,8 +6,8 @@ const features = [
   { icon: MapPin, text: "Shows you other solo travelers there right now" },
   { icon: Utensils, text: "Recommends the best street food tour tonight" },
   { icon: Signal, text: "Gets you local data in 30 seconds" },
-  { icon: Split, text: "Splits the tuk-tuk cost with your new travel buddy" },
-  { icon: MessageCircle, text: "Get travel tips from the community" },
+  { icon: Split, text: "Allows you to join city chats" },
+  { icon: MessageCircle, text: "Provides travel tips from other travelers" },
 ];
 
 const VisionSection = () => {
