@@ -1,8 +1,8 @@
-import { Instagram, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/joy-plus-logo.jpg";
 import appStoreBadge from "@/assets/app-store-badge.svg";
-import googlePlayBadge from "@/assets/google-play-badge.svg";
+import googlePlayBadge from "@/assets/google-play-badge.png";
 
 const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
 const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.joyplus.travel&pcampaignid=web_share";
@@ -43,7 +43,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6">
-              The all-in-one platform for backpackers & digital nomads. Connect, explore, and travel safely — wherever your journey takes you.
+              The all-in-one platform for backpackers & digital nomads. Connect, explore, and travel safely, wherever your journey takes you.
             </p>
             <div className="flex gap-2.5">
               {socials.map((social) => (
@@ -75,11 +75,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground">Download</h4>
             <div className="space-y-3">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press block h-10 w-32 hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
-                <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-lg overflow-hidden">
+                <img src={appStoreBadge} alt="Download on the App Store" className="h-[44px] w-auto" />
               </a>
-              <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press block h-10 w-36 hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
-                <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
+              <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press block hover:shadow-glow hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 rounded-lg overflow-hidden">
+                <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[44px] w-auto" />
               </a>
             </div>
           </div>

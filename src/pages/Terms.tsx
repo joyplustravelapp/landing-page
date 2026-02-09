@@ -12,20 +12,38 @@ const Terms = () => {
         <div className="prose prose-neutral max-w-none space-y-6 text-muted-foreground">
           <p className="text-foreground font-medium">Last updated: February 9, 2026</p>
 
+          {/* 
+            TO EDIT: Replace the placeholder sections below with your actual terms & conditions.
+            Each <h2> is a section heading and each <p> is the section body.
+            You can add, remove, or modify sections as needed.
+          */}
+
           <h2 className="font-display text-xl font-bold text-foreground">1. Acceptance of Terms</h2>
-          <p>By accessing or using the Joy Plus application and website, you agree to be bound by these Terms and Conditions and our Privacy Policy.</p>
+          <p>[Add your terms content here — describe the conditions users accept by using Joy Plus.]</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">2. User Accounts</h2>
-          <p>You are responsible for maintaining the confidentiality of your account credentials. You must be at least 18 years old to use our services.</p>
+          <p>[Describe account responsibilities, age requirements, and credential security.]</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">3. User Conduct</h2>
-          <p>You agree to use Joy Plus responsibly, respect other travelers, and not engage in any unlawful or harmful activities through our platform.</p>
+          <p>[Outline acceptable and prohibited behaviors on the platform.]</p>
 
-          <h2 className="font-display text-xl font-bold text-foreground">4. Limitation of Liability</h2>
-          <p>Joy Plus provides travel information and connections as-is. We are not liable for any damages or losses arising from your use of our platform or interactions with other users.</p>
+          <h2 className="font-display text-xl font-bold text-foreground">4. Intellectual Property</h2>
+          <p>[Describe ownership of content, trademarks, and user-generated content rights.]</p>
 
-          <h2 className="font-display text-xl font-bold text-foreground">5. Changes to Terms</h2>
-          <p>We may update these terms from time to time. Continued use of Joy Plus after changes constitutes acceptance of the updated terms.</p>
+          <h2 className="font-display text-xl font-bold text-foreground">5. Limitation of Liability</h2>
+          <p>[Explain limitations on your liability for damages arising from platform use.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">6. Termination</h2>
+          <p>[Describe conditions under which accounts may be suspended or terminated.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">7. Governing Law</h2>
+          <p>[Specify the jurisdiction and governing law for these terms.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">8. Changes to Terms</h2>
+          <p>[Explain how users will be notified of changes to these terms.]</p>
+
+          <h2 className="font-display text-xl font-bold text-foreground">9. Contact Us</h2>
+          <p>If you have questions about these terms, please contact us at <a href="mailto:support@joyplustravelapp.com" className="text-primary hover:underline">support@joyplustravelapp.com</a>.</p>
         </div>
       </div>
     </div>
