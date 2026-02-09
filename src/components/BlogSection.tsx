@@ -34,12 +34,15 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <section id="blog" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="blog" className="py-24 md:py-32 bg-background relative overflow-hidden">
+      <div className="absolute top-1/2 -translate-y-1/2 -right-32 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
+
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">Blog</p>
@@ -53,12 +56,12 @@ const BlogSection = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2.5 mb-12"
         >
           {categories.map((cat) => (
             <button
               key={cat.name}
-              className="px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-secondary hover:text-secondary transition-colors"
+              className="px-4 py-2 rounded-full glass text-sm font-medium text-foreground hover:shadow-glow hover:text-primary transition-all duration-300"
             >
               {cat.name} <span className="text-muted-foreground ml-1">({cat.count})</span>
             </button>
@@ -73,26 +76,26 @@ const BlogSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-border bg-card overflow-hidden shadow-card hover:shadow-elevated transition-all group cursor-pointer"
+              transition={{ delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-2xl glass overflow-hidden hover:shadow-glow transition-all duration-500 group cursor-pointer"
             >
               <div className="h-48 overflow-hidden">
                 <img
                   src={travelVisionImg}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-secondary">{post.category}</span>
+                  <span className="text-xs font-semibold text-primary">{post.category}</span>
                   <span className="text-xs text-muted-foreground">· {post.date}</span>
                 </div>
-                <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {post.title}
                 </h3>
                 <p className="text-muted-foreground text-sm line-clamp-2">{post.excerpt}</p>
-                <div className="mt-4 flex items-center gap-1 text-secondary text-sm font-medium">
+                <div className="mt-4 flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all duration-300">
                   Read more <ArrowRight className="w-4 h-4" />
                 </div>
               </div>

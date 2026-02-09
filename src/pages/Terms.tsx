@@ -13,19 +13,19 @@ const Terms = () => {
           <p className="text-foreground font-medium">Last updated: February 9, 2026</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">1. Acceptance of Terms</h2>
-          <p>By accessing or using the Wandr application and website, you agree to be bound by these Terms and Conditions and our Privacy Policy.</p>
+          <p>By accessing or using the Joy Plus application and website, you agree to be bound by these Terms and Conditions and our Privacy Policy.</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">2. User Accounts</h2>
           <p>You are responsible for maintaining the confidentiality of your account credentials. You must be at least 18 years old to use our services.</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">3. User Conduct</h2>
-          <p>You agree to use Wandr responsibly, respect other travelers, and not engage in any unlawful or harmful activities through our platform.</p>
+          <p>You agree to use Joy Plus responsibly, respect other travelers, and not engage in any unlawful or harmful activities through our platform.</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">4. Limitation of Liability</h2>
-          <p>Wandr provides travel information and connections as-is. We are not liable for any damages or losses arising from your use of our platform or interactions with other users.</p>
+          <p>Joy Plus provides travel information and connections as-is. We are not liable for any damages or losses arising from your use of our platform or interactions with other users.</p>
 
           <h2 className="font-display text-xl font-bold text-foreground">5. Changes to Terms</h2>
-          <p>We may update these terms from time to time. Continued use of Wandr after changes constitutes acceptance of the updated terms.</p>
+          <p>We may update these terms from time to time. Continued use of Joy Plus after changes constitutes acceptance of the updated terms.</p>
         </div>
       </div>
     </div>
