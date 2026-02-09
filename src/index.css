@@ -121,17 +121,17 @@
   }
 
   .glass {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: hsl(200 14% 16% / 0.65);
+    border: 1px solid hsl(180 10% 95% / 0.08);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
   }
 
   .glass-subtle {
-    background: hsl(200 16% 26% / 0.45);
-    border: 1px solid hsl(180 10% 95% / 0.06);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: hsl(200 14% 16% / 0.4);
+    border: 1px solid hsl(180 10% 95% / 0.05);
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
   }
 
   /* Button press animation */
