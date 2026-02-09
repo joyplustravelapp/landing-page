@@ -1,9 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download, Smartphone } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/joy-plus-logo.jpg";
-import qrCode from "/qr-download.png";
 
 const navLinks = [
   { label: "Why Us", href: "#why" },
@@ -54,20 +53,13 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:block relative group">
-          <div className="p-2 rounded-xl glass hover:shadow-glow transition-all duration-300 cursor-pointer">
-            <img
-              src={qrCode}
-              alt="Download Joy Plus App"
-              className="w-16 h-16 rounded-lg"
-            />
-          </div>
-          <div className="absolute -bottom-8 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            <div className="bg-card border border-border rounded-lg px-3 py-1.5 text-xs font-medium text-foreground whitespace-nowrap shadow-lg">
-              Scan to download
-            </div>
-          </div>
-        </div>
+        <Link
+          to="/download"
+          className="hidden md:flex items-center gap-2 btn-press px-5 py-2 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow hover:scale-[1.02] active:scale-[0.96] transition-all duration-300"
+        >
+          <Download className="w-4 h-4" />
+          Download now!
+        </Link>
 
         {/* Mobile toggle */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground p-1">
@@ -96,26 +88,14 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="mt-3">
-                <Link
-                  to="/download"
-                  onClick={() => setOpen(false)}
-                  className="btn-press w-full px-5 py-3 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  <Smartphone className="w-4 h-4" />
-                  Download App
-                </Link>
-                <div className="mt-3 p-3 rounded-xl glass flex items-center justify-center">
-                  <img
-                    src={qrCode}
-                    alt="Download Joy Plus App"
-                    className="w-32 h-32 rounded-lg"
-                  />
-                </div>
-                <p className="text-center text-xs text-muted-foreground mt-2">
-                  Scan QR code to download
-                </p>
-              </div>
+              <Link
+                to="/download"
+                onClick={() => setOpen(false)}
+                className="btn-press w-full mt-3 px-5 py-3 rounded-xl bg-gradient-glow text-primary-foreground font-semibold text-sm hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Download now!
+              </Link>
             </div>
           </motion.div>
         )}
