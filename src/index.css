@@ -6,65 +6,64 @@
 
 @layer base {
   :root {
-    /* Dark slate palette inspired by Joy Plus logo */
-    --background: 200 18% 18%;
-    --foreground: 180 10% 95%;
+    /* Lighter dark palette — not too dark, easier on the eyes */
+    --background: 200 14% 22%;
+    --foreground: 180 8% 96%;
 
-    --card: 200 20% 22%;
-    --card-foreground: 180 10% 95%;
+    --card: 200 14% 26%;
+    --card-foreground: 180 8% 96%;
 
-    --popover: 200 20% 22%;
-    --popover-foreground: 180 10% 95%;
+    --popover: 200 14% 26%;
+    --popover-foreground: 180 8% 96%;
 
     /* Ocean teal from logo */
-    --primary: 190 65% 48%;
-    --primary-foreground: 200 20% 10%;
+    --primary: 190 65% 52%;
+    --primary-foreground: 200 20% 8%;
 
     /* Lime green from logo */
-    --secondary: 110 55% 50%;
-    --secondary-foreground: 200 20% 10%;
+    --secondary: 110 55% 55%;
+    --secondary-foreground: 200 20% 8%;
 
-    --muted: 200 15% 26%;
-    --muted-foreground: 200 10% 60%;
+    --muted: 200 12% 32%;
+    --muted-foreground: 200 8% 68%;
 
     /* Bright cyan accent */
-    --accent: 180 70% 45%;
-    --accent-foreground: 200 20% 10%;
+    --accent: 180 60% 50%;
+    --accent-foreground: 200 20% 8%;
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 15% 28%;
-    --input: 200 15% 28%;
-    --ring: 190 65% 48%;
+    --border: 200 12% 34%;
+    --input: 200 12% 34%;
+    --ring: 190 65% 52%;
 
     --radius: 0.875rem;
 
-    --sidebar-background: 200 20% 16%;
-    --sidebar-foreground: 180 10% 95%;
-    --sidebar-primary: 190 65% 48%;
-    --sidebar-primary-foreground: 200 20% 10%;
-    --sidebar-accent: 200 15% 26%;
-    --sidebar-accent-foreground: 180 10% 95%;
-    --sidebar-border: 200 15% 28%;
-    --sidebar-ring: 190 65% 48%;
+    --sidebar-background: 200 14% 20%;
+    --sidebar-foreground: 180 8% 96%;
+    --sidebar-primary: 190 65% 52%;
+    --sidebar-primary-foreground: 200 20% 8%;
+    --sidebar-accent: 200 12% 32%;
+    --sidebar-accent-foreground: 180 8% 96%;
+    --sidebar-border: 200 12% 34%;
+    --sidebar-ring: 190 65% 52%;
 
     /* Custom tokens */
-    --gradient-ocean: linear-gradient(135deg, hsl(190 65% 48%), hsl(170 60% 40%));
-    --gradient-lime: linear-gradient(135deg, hsl(110 55% 50%), hsl(150 60% 45%));
-    --gradient-glow: linear-gradient(135deg, hsl(190 65% 48%), hsl(110 55% 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(200 18% 18%), hsl(200 22% 14%));
-    --shadow-glow: 0 0 30px -5px hsl(190 65% 48% / 0.25);
-    --shadow-card: 0 4px 24px -4px hsl(200 25% 5% / 0.4);
-    --shadow-elevated: 0 12px 40px -8px hsl(200 25% 5% / 0.5);
-    --glass-bg: hsl(200 20% 20% / 0.7);
-    --glass-border: hsl(180 10% 95% / 0.08);
+    --gradient-ocean: linear-gradient(135deg, hsl(190 65% 52%), hsl(170 55% 45%));
+    --gradient-lime: linear-gradient(135deg, hsl(110 55% 55%), hsl(150 50% 48%));
+    --gradient-glow: linear-gradient(135deg, hsl(190 65% 52%), hsl(110 55% 55%));
+    --gradient-dark: linear-gradient(180deg, hsl(200 14% 22%), hsl(200 18% 16%));
+    --shadow-glow: 0 0 30px -5px hsl(190 65% 52% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(200 25% 5% / 0.35);
+    --shadow-elevated: 0 12px 40px -8px hsl(200 25% 5% / 0.4);
+    --glass-bg: hsl(200 16% 26% / 0.7);
+    --glass-border: hsl(180 10% 95% / 0.1);
   }
 
   .dark {
-    /* Already dark by default */
-    --background: 200 18% 18%;
-    --foreground: 180 10% 95%;
+    --background: 200 14% 22%;
+    --foreground: 180 8% 96%;
   }
 }
 
@@ -129,9 +128,17 @@
   }
 
   .glass-subtle {
-    background: hsl(200 20% 20% / 0.4);
-    border: 1px solid hsl(180 10% 95% / 0.05);
+    background: hsl(200 16% 26% / 0.45);
+    border: 1px solid hsl(180 10% 95% / 0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Button press animation */
+  .btn-press {
+    @apply transition-all duration-200;
+  }
+  .btn-press:active {
+    transform: scale(0.96);
   }
 }

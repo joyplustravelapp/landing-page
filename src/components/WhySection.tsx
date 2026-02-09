@@ -56,10 +56,10 @@ const WhySection = () => {
         >
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The Problem</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Every solo trip requires managing...
+            Every trip requires planning
           </h2>
           <p className="text-muted-foreground text-lg">
-            That's <span className="text-foreground font-semibold">10+ apps minimum</span>. We asked: why isn't there ONE platform?
+            We decided to create the <span className="text-foreground font-semibold">ultimate all in one travel app</span>
           </p>
         </motion.div>
 

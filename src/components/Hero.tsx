@@ -1,16 +1,20 @@
 import { motion } from "framer-motion";
-import { Apple, Play, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
-import logo from "@/assets/joy-plus-logo.jpg";
+import appStoreBadge from "@/assets/app-store-badge.svg";
+import googlePlayBadge from "@/assets/google-play-badge.svg";
+
+const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.joyplus.travel&pcampaignid=web_share";
 
 const Hero = () => {
   return (
     <section id="download" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image with darker overlay */}
+      {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Solo traveler overlooking Bangkok at sunset" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/75" />
-        <div className="absolute inset-0 bg-gradient-dark opacity-60" />
+        <img src={heroImg} alt="Solo traveler overlooking a tropical city at golden hour" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/65" />
+        <div className="absolute inset-0 bg-gradient-dark opacity-50" />
       </div>
 
       {/* Ambient glow effects */}
@@ -19,24 +23,6 @@ const Hero = () => {
 
       <div className="relative container mx-auto px-4 py-20">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-6"
-          >
-            <img src={logo} alt="Joy Plus" className="w-16 h-16 rounded-2xl shadow-glow" />
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-primary font-display font-semibold text-base mb-4 tracking-wide"
-          >
-            For backpackers & digital nomads
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,24 +50,20 @@ const Hero = () => {
             className="flex flex-wrap gap-4"
           >
             <a
-              href="#"
-              className="group inline-flex items-center gap-3 px-6 py-4 rounded-2xl glass hover:shadow-glow transition-all duration-500"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-press h-14 hover:shadow-glow transition-all duration-300 rounded-xl overflow-hidden"
             >
-              <Apple className="w-7 h-7 text-foreground" />
-              <div className="text-left">
-                <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Download on the</div>
-                <div className="text-sm font-bold text-foreground leading-tight">App Store</div>
-              </div>
+              <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
             </a>
             <a
-              href="#"
-              className="group inline-flex items-center gap-3 px-6 py-4 rounded-2xl glass hover:shadow-glow transition-all duration-500"
+              href={GOOGLE_PLAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-press h-14 hover:shadow-glow transition-all duration-300 rounded-xl overflow-hidden"
             >
-              <Play className="w-7 h-7 text-foreground" />
-              <div className="text-left">
-                <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Get it on</div>
-                <div className="text-sm font-bold text-foreground leading-tight">Google Play</div>
-              </div>
+              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
             </a>
           </motion.div>
         </div>

@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Apple, Play, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/joy-plus-logo.jpg";
+import appStoreBadge from "@/assets/app-store-badge.svg";
+import googlePlayBadge from "@/assets/google-play-badge.svg";
 
 const navLinks = [
   { label: "Why Us", href: "#why" },
@@ -10,6 +12,9 @@ const navLinks = [
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
+
+const APP_STORE_URL = "https://apps.apple.com/fr/app/joy-plus-find-travel-friends/id6746488482?l=en-GB";
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.joyplus.travel&pcampaignid=web_share";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -34,7 +39,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2.5">
           <img src={logo} alt="Joy Plus" className="w-8 h-8 rounded-lg object-cover" />
           <span className="font-display text-lg font-bold text-foreground tracking-tight">
-            Joy<span className="text-primary">+</span>
+            Joy Plus
           </span>
         </Link>
 
@@ -52,11 +57,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <a href="#download" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:shadow-glow transition-all duration-300">
-            <Apple className="w-4 h-4" /> iOS
+          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-9 hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
+            <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
           </a>
-          <a href="#download" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-secondary text-secondary-foreground text-sm font-semibold hover:shadow-glow transition-all duration-300">
-            <Play className="w-4 h-4" /> Android
+          <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-9 hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
+            <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
           </a>
         </div>
 
@@ -88,11 +93,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex gap-2 mt-3">
-                <a href="#download" className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold flex-1 justify-center">
-                  <Apple className="w-4 h-4" /> App Store
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-11 flex-1 flex justify-center hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
+                  <img src={appStoreBadge} alt="Download on the App Store" className="h-full" />
                 </a>
-                <a href="#download" className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-secondary text-secondary-foreground text-sm font-semibold flex-1 justify-center">
-                  <Play className="w-4 h-4" /> Google Play
+                <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="btn-press h-11 flex-1 flex justify-center hover:shadow-glow transition-all duration-300 rounded-lg overflow-hidden">
+                  <img src={googlePlayBadge} alt="Get it on Google Play" className="h-full" />
                 </a>
               </div>
             </div>
