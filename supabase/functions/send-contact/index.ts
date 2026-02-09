@@ -13,25 +13,88 @@ interface ContactRequest {
   message: string;
 }
 
+// Simple in-memory rate limiter
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_MAX = 5; // max submissions per window
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  entry.count++;
+  if (entry.count > RATE_LIMIT_MAX) {
+    return true;
+  }
+
+  return false;
+}
+
+// Periodically clean up expired entries to prevent memory leaks
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of rateLimitMap) {
+    if (now > entry.resetAt) {
+      rateLimitMap.delete(ip);
+    }
+  }
+}, 10 * 60 * 1000); // every 10 minutes
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
 
   try {
+    // Rate limiting by IP
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    if (isRateLimited(ip)) {
+      console.warn(`Rate limit exceeded for IP: ${ip}`);
+      return new Response(
+        JSON.stringify({ error: "Too many submissions. Please try again later." }),
+        {
+          status: 429,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
     const { name, email, message }: ContactRequest = await req.json();
 
     if (!name || !email || !message) {
-      throw new Error("Missing required fields: name, email, message");
+      return new Response(
+        JSON.stringify({ error: "Please fill in all required fields." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
     }
 
     if (name.length > 100 || email.length > 255 || message.length > 2000) {
-      throw new Error("Input exceeds maximum length");
+      return new Response(
+        JSON.stringify({ error: "Input exceeds maximum allowed length." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      throw new Error("Invalid email address");
+      return new Response(
+        JSON.stringify({ error: "Please provide a valid email address." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
     }
 
     console.log(`Contact form submission from ${name} (${email})`);
@@ -48,7 +111,13 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (dbError) {
       console.error("Database error:", dbError);
-      throw new Error("Failed to save message");
+      return new Response(
+        JSON.stringify({ error: "Unable to submit your message. Please try again later." }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
     }
 
     return new Response(JSON.stringify({ success: true }), {
@@ -58,9 +127,9 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in send-contact function:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Unable to submit your message. Please try again later." }),
       {
-        status: 400,
+        status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
