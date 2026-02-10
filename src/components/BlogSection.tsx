@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useArticleViewCounts } from "@/hooks/useArticleViews";
 import blogSafetyImg from "@/assets/blog-safety-tips.jpg";
 import blogBangkokImg from "@/assets/blog-bangkok-budget.jpg";
 import blogFriendsImg from "@/assets/blog-making-friends.jpg";
@@ -193,6 +194,7 @@ const INITIAL_COUNT = 6;
 const BlogSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [showAll, setShowAll] = useState(false);
+  const viewCounts = useArticleViewCounts();
 
   const filteredPosts = activeCategory === "All"
     ? posts
@@ -273,6 +275,11 @@ const BlogSection = () => {
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs font-semibold text-primary">{post.category}</span>
                       <span className="text-xs text-muted-foreground">· {post.date}</span>
+                      {viewCounts[post.slug] > 0 && (
+                        <span className="text-xs text-muted-foreground flex items-center gap-1 ml-auto">
+                          <Eye className="w-3 h-3" /> {viewCounts[post.slug]}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                       {post.title}
