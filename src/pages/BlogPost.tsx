@@ -4,14 +4,20 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import travelVisionImg from "@/assets/travel-vision.jpg";
+import blogSafetyImg from "@/assets/blog-safety-tips.jpg";
 import { useIncrementView } from "@/hooks/useArticleViews";
 
-const blogContent: Record<string, { title: string; category: string; date: string; content: string[] }> = {
-  "safety-tips-solo-travelers": {
-    title: "10 Essential Safety Tips for Solo Female Travelers",
+const blogContent: Record<string, { title: string; category: string; date: string; content: string[]; seo?: { description: string; image?: string } }> = {
+  "solo-female-travel-safety-tips": {
+    title: "Solo Female Travel Safety: 10 Essential Tips to Stay Safe Abroad",
     category: "Safety",
     date: "Feb 5, 2026",
+    seo: {
+      description: "Planning solo female travel? Learn 10 essential safety tips from experienced travelers worldwide.",
+      image: blogSafetyImg,
+    },
     content: [
       "Solo travel is one of the most rewarding experiences you can have, but safety should always be a priority. Whether you're backpacking through Southeast Asia or exploring European cities, these tips will help you stay safe and confident on the road.",
       "1. Share your itinerary with someone you trust. Always let a friend or family member know where you're going and when you expect to arrive.",
@@ -349,6 +355,12 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={post.title}
+        description={post.seo?.description}
+        image={post.seo?.image}
+        type="article"
+      />
       <Navbar />
       <article className="pt-28 pb-20">
         {/* Hero */}
