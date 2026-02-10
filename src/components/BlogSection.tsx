@@ -28,8 +28,8 @@ const categories = ["All", "Solo Tips", "Destinations", "Safety", "Budget Travel
 
 const posts = [
   {
-    slug: "safety-tips-solo-travelers",
-    title: "10 Essential Safety Tips for Solo Female Travelers",
+    slug: "solo-female-travel-safety-tips",
+    title: "Solo Female Travel Safety: 10 Essential Tips to Stay Safe Abroad",
     category: "Safety",
     excerpt: "From choosing the right accommodation to staying connected, here's everything you need to know.",
     date: "Feb 5, 2026",
