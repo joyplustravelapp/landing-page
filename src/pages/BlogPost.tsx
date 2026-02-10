@@ -7,6 +7,25 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import travelVisionImg from "@/assets/travel-vision.jpg";
 import blogSafetyImg from "@/assets/blog-safety-tips.jpg";
+import blogBangkokImg from "@/assets/blog-bangkok-budget.jpg";
+import blogFriendsImg from "@/assets/blog-making-friends.jpg";
+import blogBaliImg from "@/assets/blog-coworking-bali.jpg";
+import blogLisbonImg from "@/assets/blog-lisbon-gems.jpg";
+import blogJapanImg from "@/assets/blog-japan-culture.jpg";
+import blogPackingImg from "@/assets/blog-packing-essentials.jpg";
+import blogFirstTripImg from "@/assets/blog-first-solo-trip.jpg";
+import blogColombiaImg from "@/assets/blog-colombia.jpg";
+import blogMoroccoImg from "@/assets/blog-morocco.jpg";
+import blogNewZealandImg from "@/assets/blog-new-zealand.jpg";
+import blogScamsImg from "@/assets/blog-travel-scams.jpg";
+import blogNightSafetyImg from "@/assets/blog-night-safety.jpg";
+import blogEuropeRailImg from "@/assets/blog-europe-rail.jpg";
+import blogFreeTokyoImg from "@/assets/blog-free-tokyo.jpg";
+import blogIndiaFoodImg from "@/assets/blog-india-food.jpg";
+import blogEthicalTourismImg from "@/assets/blog-ethical-tourism.jpg";
+import blogAsiaFestivalsImg from "@/assets/blog-asia-festivals.jpg";
+import blogNomadVisaImg from "@/assets/blog-nomad-visa.jpg";
+import blogProductivityImg from "@/assets/blog-productivity-travel.jpg";
 import { useIncrementView } from "@/hooks/useArticleViews";
 
 const blogContent: Record<string, { title: string; category: string; date: string; content: string[]; seo?: { description: string; image?: string } }> = {
@@ -36,6 +55,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Bangkok on $30/Day: The Ultimate Budget Guide",
     category: "Budget Travel",
     date: "Jan 28, 2026",
+    seo: {
+      description: "Explore Bangkok on just $30 a day. Budget tips for accommodation, food, transport, and activities in Thailand's capital.",
+      image: blogBangkokImg,
+    },
     content: [
       "Bangkok is one of the world's most exciting cities, and the best part? You can experience it all on a shoestring budget. Here's how to make the most of Thailand's capital without breaking the bank.",
       "Accommodation ($8-12/night): Bangkok has some of the best hostels in the world. Areas like Khao San Road and Silom offer dorm beds for as low as $8. Book through Joy Plus to find vetted recommendations from fellow travelers.",
@@ -49,6 +72,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "How to Make Friends While Traveling Solo",
     category: "Solo Tips",
     date: "Jan 20, 2026",
+    seo: {
+      description: "Discover proven ways to make friends while traveling solo. Tips for meeting like-minded travelers on the road.",
+      image: blogFriendsImg,
+    },
     content: [
       "One of the biggest fears about solo travel is loneliness. But here's the truth: solo travelers often make more friends than those traveling in groups. Here's how to connect with amazing people on the road.",
       "Stay in social accommodations. Hostels with common areas, kitchens, and organized events are friendship goldmines. Look for places that host group dinners or pub crawls.",
@@ -63,6 +90,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Top 5 Coworking Spaces in Bali for Digital Nomads",
     category: "Digital Nomad",
     date: "Jan 15, 2026",
+    seo: {
+      description: "The best coworking spaces in Bali for digital nomads. Fast WiFi, community, and ocean views in Canggu, Ubud, and Seminyak.",
+      image: blogBaliImg,
+    },
     content: [
       "Bali has become the digital nomad capital of the world, and for good reason. Amazing weather, affordable living, and some of the best coworking spaces you'll find anywhere.",
       "1. Dojo Bali (Canggu): The OG of Bali coworking. Fast WiFi, pool access, and an incredible community. Monthly passes start around $200.",
@@ -77,6 +108,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Hidden Gems in Lisbon: Beyond the Tourist Trail",
     category: "Destinations",
     date: "Jan 10, 2026",
+    seo: {
+      description: "Explore Lisbon's hidden gems beyond the tourist trail. Secret viewpoints, local neighborhoods, and authentic experiences.",
+      image: blogLisbonImg,
+    },
     content: [
       "Lisbon is one of Europe's most charming capitals, but the best experiences lie beyond the usual tourist spots. Here are our favorite hidden gems.",
       "LX Factory: This creative hub in a former industrial complex is packed with independent shops, galleries, and some of the best brunch spots in the city. Visit on a Sunday for the weekly book market.",
@@ -91,6 +126,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Cultural Etiquette in Japan: What Every Traveler Should Know",
     category: "Culture",
     date: "Jan 5, 2026",
+    seo: {
+      description: "Essential cultural etiquette tips for traveling in Japan. Learn about bowing, chopstick rules, tipping, and onsen customs.",
+      image: blogJapanImg,
+    },
     content: [
       "Japan is a country where tradition and modernity coexist beautifully. Understanding cultural etiquette will enrich your travel experience and show respect to your hosts.",
       "Shoes off: Remove your shoes when entering homes, many restaurants, and some temples. You'll usually find slippers provided at the entrance.",
@@ -106,6 +145,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Packing Light: The Ultimate Solo Travel Packing List",
     category: "Solo Tips",
     date: "Dec 30, 2025",
+    seo: {
+      description: "The ultimate solo travel packing list. Pack light and smart with this minimalist guide for any destination.",
+      image: blogPackingImg,
+    },
     content: [
       "The art of packing light can make or break your solo trip. Lugging a heavy suitcase through cobblestone streets or up hostel staircases is nobody's idea of fun. Here's how to pack smart.",
       "The one-bag rule: Challenge yourself to fit everything into a single 40L backpack. It forces you to prioritize and makes transit infinitely easier.",
@@ -122,6 +165,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Your First Solo Trip: A Step-by-Step Guide",
     category: "Solo Tips",
     date: "Dec 22, 2025",
+    seo: {
+      description: "A beginner's step-by-step guide to planning your first solo trip. Destination picks, booking tips, and mindset advice.",
+      image: blogFirstTripImg,
+    },
     content: [
       "Taking your first solo trip can feel daunting, but it's also one of the most transformative things you'll ever do. This guide breaks it down into manageable steps.",
       "Step 1: Choose a beginner-friendly destination. Portugal, Thailand, Japan, and Costa Rica are all excellent first-timer picks thanks to their safety, affordability, and welcoming locals.",
@@ -138,6 +185,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Colombia Off the Beaten Path: Beyond Bogotá",
     category: "Destinations",
     date: "Dec 18, 2025",
+    seo: {
+      description: "Discover Colombia beyond Bogotá. Hidden gems in Jardín, Minca, Guatapé, and more off-the-beaten-path destinations.",
+      image: blogColombiaImg,
+    },
     content: [
       "Colombia has shed its troubled reputation to become one of South America's hottest destinations. While Bogotá and Cartagena steal the headlines, the real magic lies in the lesser-known corners of this incredibly diverse country.",
       "Jardín, Antioquia: This tiny pueblo in the coffee region feels frozen in time. Colorful balconies line the main square, hummingbirds fill the cloud forest, and the local coffee is some of the best you'll ever taste.",
@@ -152,6 +203,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "A Week in Morocco: From Marrakech to the Sahara",
     category: "Destinations",
     date: "Dec 12, 2025",
+    seo: {
+      description: "Plan a week in Morocco from Marrakech to the Sahara. Day-by-day itinerary with tips for souks, mountains, and desert camping.",
+      image: blogMoroccoImg,
+    },
     content: [
       "Morocco is a feast for the senses — the aroma of spices in the souks, the call to prayer echoing across medinas, the vast silence of the Sahara. Here's how to experience it all in seven unforgettable days.",
       "Days 1-2: Marrakech. Lose yourself in the labyrinthine medina, visit the stunning Bahia Palace, and spend an evening in the chaotic wonder of Jemaa el-Fnaa square. Stay in a traditional riad for the full experience.",
@@ -166,6 +221,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "New Zealand Road Trip: South Island in 10 Days",
     category: "Destinations",
     date: "Dec 5, 2025",
+    seo: {
+      description: "Plan the perfect 10-day New Zealand South Island road trip. Glaciers, lakes, fjords, and stunning mountain passes.",
+      image: blogNewZealandImg,
+    },
     content: [
       "New Zealand's South Island is arguably the most scenically diverse place on Earth. In just 10 days, you can drive past glaciers, through rainforests, alongside turquoise lakes, and over dramatic mountain passes.",
       "Days 1-2: Christchurch to Kaikōura. Start in Christchurch and drive north along the stunning coastal road to Kaikōura. Whale watching here is world-class, and the crayfish is legendary.",
@@ -181,6 +240,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Common Travel Scams and How to Avoid Them",
     category: "Safety",
     date: "Nov 28, 2025",
+    seo: {
+      description: "Protect yourself from common travel scams worldwide. Learn to spot fake taxis, bracelet tricks, and WiFi honeypots.",
+      image: blogScamsImg,
+    },
     content: [
       "Scams targeting tourists exist everywhere, from Paris to Phnom Penh. Knowing the most common ones is your best defense. Here's what to watch for.",
       "The friendship bracelet: Someone ties a bracelet on your wrist and demands payment. Prevention: Keep your hands in your pockets when approached by overly friendly strangers offering free items.",
@@ -196,6 +259,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Staying Safe at Night: A Solo Traveler's Guide",
     category: "Safety",
     date: "Nov 20, 2025",
+    seo: {
+      description: "Stay safe at night while traveling solo. Practical strategies for navigating unfamiliar cities after dark.",
+      image: blogNightSafetyImg,
+    },
     content: [
       "Nighttime in a new city can be magical — but it also requires extra awareness. These practical strategies will help you enjoy evening adventures with confidence.",
       "Plan your route home before going out. Know how you're getting back to your accommodation before you leave. Save your hotel address in the local language on your phone.",
@@ -212,6 +279,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Europe by Rail: Budget Train Travel Guide",
     category: "Budget Travel",
     date: "Nov 15, 2025",
+    seo: {
+      description: "Budget-friendly guide to train travel across Europe. Eurail passes, night trains, and the best value rail routes.",
+      image: blogEuropeRailImg,
+    },
     content: [
       "Train travel is one of the most romantic and sustainable ways to explore Europe, and with the right strategy, it can be surprisingly affordable.",
       "Eurail Pass vs. point-to-point tickets: For multi-country trips, a Eurail Pass often saves money. But for focused regional travel (like just Italy or Spain), individual tickets booked in advance can be cheaper.",
@@ -227,6 +298,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "15 Free Things to Do in Tokyo",
     category: "Budget Travel",
     date: "Nov 8, 2025",
+    seo: {
+      description: "15 amazing free things to do in Tokyo. Temples, gardens, neighborhoods, and city views that won't cost a yen.",
+      image: blogFreeTokyoImg,
+    },
     content: [
       "Tokyo has a reputation for being expensive, but some of its best experiences cost absolutely nothing. Here are 15 free things that prove Tokyo can be budget-friendly.",
       "1. Senso-ji Temple in Asakusa: Tokyo's oldest temple is free to enter and stunningly beautiful, especially at dawn before the crowds arrive.",
@@ -251,6 +326,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "A Food Lover's Guide to India's Street Cuisine",
     category: "Culture",
     date: "Nov 1, 2025",
+    seo: {
+      description: "A food lover's guide to India's best street cuisine. From Delhi's chaat to Chennai's dosas and Lucknow's kebabs.",
+      image: blogIndiaFoodImg,
+    },
     content: [
       "India's street food is a universe unto itself — each region has its own flavors, techniques, and specialties. This guide will take you on a culinary journey across the subcontinent.",
       "Delhi: The Chaat Capital. Gol gappas (pani puri), aloo tikki, and chole bhature are everywhere. Head to Chandni Chowk for the oldest and most legendary street food in India. Don't miss the paranthe wali gali (lane of parathas).",
@@ -267,6 +346,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Ethical Tourism: Respecting Indigenous Cultures",
     category: "Culture",
     date: "Oct 25, 2025",
+    seo: {
+      description: "How to travel responsibly and respect indigenous cultures. Ethical tourism tips for community-led experiences.",
+      image: blogEthicalTourismImg,
+    },
     content: [
       "Tourism can be a force for good — supporting local economies, preserving traditions, and fostering cross-cultural understanding. But it can also cause harm when done carelessly. Here's how to travel respectfully.",
       "Research before you visit. Learn about the community's history, current issues, and guidelines for visitors. Many indigenous communities have published visitor protocols — respect them.",
@@ -283,6 +366,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Southeast Asia's Must-See Festivals in 2026",
     category: "Culture",
     date: "Oct 18, 2025",
+    seo: {
+      description: "The best festivals in Southeast Asia for 2026. Songkran, Yi Peng, lantern festivals, and more unmissable celebrations.",
+      image: blogAsiaFestivalsImg,
+    },
     content: [
       "Southeast Asia celebrates with a passion unmatched anywhere on Earth. From water fights to lantern-lit skies, here are the festivals you absolutely cannot miss in 2026.",
       "Songkran — Thailand (April 13-15): The Thai New Year is the world's biggest water fight. Entire cities transform into a giant splash zone. Chiang Mai and Bangkok are the epicenters, but every town celebrates.",
@@ -299,6 +386,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Digital Nomad Visas: Where to Apply in 2026",
     category: "Digital Nomad",
     date: "Oct 10, 2025",
+    seo: {
+      description: "Complete guide to digital nomad visas in 2026. Requirements, income thresholds, and top countries for remote workers.",
+      image: blogNomadVisaImg,
+    },
     content: [
       "The digital nomad visa revolution is in full swing. Over 50 countries now offer dedicated visas for remote workers, and more are joining every year. Here's your guide to the best options in 2026.",
       "Portugal: One of Europe's most popular options. The D8 visa lets you stay for up to a year (renewable) with a minimum monthly income of €3,500. Lisbon and Porto are digital nomad hotspots.",
@@ -316,6 +407,10 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     title: "Staying Productive While Traveling: Tools & Tips",
     category: "Digital Nomad",
     date: "Oct 3, 2025",
+    seo: {
+      description: "Stay productive while traveling as a digital nomad. Essential tools, routines, and strategies from experienced remote workers.",
+      image: blogProductivityImg,
+    },
     content: [
       "The dream of working from anywhere is real — but staying productive while surrounded by new sights, sounds, and temptations takes discipline. Here's what works for seasoned digital nomads.",
       "Establish a routine: Even if your location changes, your work habits shouldn't. Wake up at the same time, start work at the same time, and protect your deep work hours.",
