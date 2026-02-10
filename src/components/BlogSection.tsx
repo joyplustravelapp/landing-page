@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import blogSafetyImg from "@/assets/blog-safety-tips.jpg";
@@ -188,12 +188,23 @@ const posts = [
   },
 ];
 
+const INITIAL_COUNT = 6;
+
 const BlogSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [showAll, setShowAll] = useState(false);
 
   const filteredPosts = activeCategory === "All"
     ? posts
     : posts.filter((post) => post.category === activeCategory);
+
+  const visiblePosts = showAll ? filteredPosts : filteredPosts.slice(0, INITIAL_COUNT);
+  const hasMore = filteredPosts.length > INITIAL_COUNT;
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setShowAll(false);
+  };
 
   return (
     <section id="blog" className="py-24 md:py-32 bg-background relative overflow-hidden">
@@ -223,7 +234,7 @@ const BlogSection = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`btn-press px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeCategory === cat
                   ? "bg-gradient-glow text-primary-foreground shadow-glow"
@@ -237,41 +248,64 @@ const BlogSection = () => {
 
         {/* Posts grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {filteredPosts.map((post, i) => (
-            <motion.article
-              key={post.slug}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Link
-                to={`/blog/${post.slug}`}
-                className="block rounded-2xl glass overflow-hidden hover:shadow-glow transition-all duration-500 group cursor-pointer"
+          <AnimatePresence mode="popLayout">
+            {visiblePosts.map((post, i) => (
+              <motion.article
+                key={post.slug}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                layout
               >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold text-primary">{post.category}</span>
-                    <span className="text-xs text-muted-foreground">· {post.date}</span>
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="block rounded-2xl glass overflow-hidden hover:shadow-glow transition-all duration-500 group cursor-pointer"
+                >
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
                   </div>
-                  <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2">{post.excerpt}</p>
-                  <div className="mt-4 flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all duration-300">
-                    Read more <ArrowRight className="w-4 h-4" />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs font-semibold text-primary">{post.category}</span>
+                      <span className="text-xs text-muted-foreground">· {post.date}</span>
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm line-clamp-2">{post.excerpt}</p>
+                    <div className="mt-4 flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all duration-300">
+                      Read more <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </motion.article>
-          ))}
+                </Link>
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </div>
+
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex justify-center mt-10"
+          >
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="btn-press inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-foreground hover:shadow-glow hover:text-primary text-sm font-medium transition-all duration-300"
+            >
+              {showAll ? (
+                <>Show less <ChevronUp className="w-4 h-4" /></>
+              ) : (
+                <>See more ({filteredPosts.length - INITIAL_COUNT} more) <ChevronDown className="w-4 h-4" /></>
+              )}
+            </button>
+          </motion.div>
+        )}
 
         {filteredPosts.length === 0 && (
           <motion.p
