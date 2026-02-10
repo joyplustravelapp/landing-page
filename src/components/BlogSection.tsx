@@ -8,6 +8,20 @@ import blogFriendsImg from "@/assets/blog-making-friends.jpg";
 import blogBaliImg from "@/assets/blog-coworking-bali.jpg";
 import blogLisbonImg from "@/assets/blog-lisbon-gems.jpg";
 import blogJapanImg from "@/assets/blog-japan-culture.jpg";
+import blogPackingImg from "@/assets/blog-packing-essentials.jpg";
+import blogFirstTripImg from "@/assets/blog-first-solo-trip.jpg";
+import blogColombiaImg from "@/assets/blog-colombia.jpg";
+import blogMoroccoImg from "@/assets/blog-morocco.jpg";
+import blogNewZealandImg from "@/assets/blog-new-zealand.jpg";
+import blogScamsImg from "@/assets/blog-travel-scams.jpg";
+import blogNightSafetyImg from "@/assets/blog-night-safety.jpg";
+import blogEuropeRailImg from "@/assets/blog-europe-rail.jpg";
+import blogFreeTokyoImg from "@/assets/blog-free-tokyo.jpg";
+import blogIndiaFoodImg from "@/assets/blog-india-food.jpg";
+import blogEthicalTourismImg from "@/assets/blog-ethical-tourism.jpg";
+import blogAsiaFestivalsImg from "@/assets/blog-asia-festivals.jpg";
+import blogNomadVisaImg from "@/assets/blog-nomad-visa.jpg";
+import blogProductivityImg from "@/assets/blog-productivity-travel.jpg";
 
 const categories = ["All", "Solo Tips", "Destinations", "Safety", "Budget Travel", "Culture", "Digital Nomad"];
 
@@ -59,6 +73,118 @@ const posts = [
     excerpt: "Avoid common faux pas and show respect with this essential guide to Japanese customs.",
     date: "Jan 5, 2026",
     image: blogJapanImg,
+  },
+  {
+    slug: "solo-travel-packing-essentials",
+    title: "Packing Light: The Ultimate Solo Travel Packing List",
+    category: "Solo Tips",
+    excerpt: "Everything you need and nothing you don't — master the art of minimalist packing for any trip.",
+    date: "Dec 30, 2025",
+    image: blogPackingImg,
+  },
+  {
+    slug: "first-solo-trip-guide",
+    title: "Your First Solo Trip: A Step-by-Step Guide",
+    category: "Solo Tips",
+    excerpt: "Nervous about your first solo adventure? This beginner-friendly guide covers every step.",
+    date: "Dec 22, 2025",
+    image: blogFirstTripImg,
+  },
+  {
+    slug: "colombia-off-beaten-path",
+    title: "Colombia Off the Beaten Path: Beyond Bogotá",
+    category: "Destinations",
+    excerpt: "Colorful streets, lush jungles, and Caribbean coastline — discover Colombia's hidden treasures.",
+    date: "Dec 18, 2025",
+    image: blogColombiaImg,
+  },
+  {
+    slug: "morocco-desert-adventure",
+    title: "A Week in Morocco: From Marrakech to the Sahara",
+    category: "Destinations",
+    excerpt: "Spice markets, desert sunsets, and ancient medinas — your ultimate Morocco itinerary.",
+    date: "Dec 12, 2025",
+    image: blogMoroccoImg,
+  },
+  {
+    slug: "new-zealand-road-trip",
+    title: "New Zealand Road Trip: South Island in 10 Days",
+    category: "Destinations",
+    excerpt: "Snow-capped peaks, turquoise lakes, and epic drives — plan the perfect South Island road trip.",
+    date: "Dec 5, 2025",
+    image: blogNewZealandImg,
+  },
+  {
+    slug: "travel-scams-avoid",
+    title: "Common Travel Scams and How to Avoid Them",
+    category: "Safety",
+    excerpt: "From fake taxis to overpriced tours — learn to spot and dodge the most common scams worldwide.",
+    date: "Nov 28, 2025",
+    image: blogScamsImg,
+  },
+  {
+    slug: "solo-night-safety",
+    title: "Staying Safe at Night: A Solo Traveler's Guide",
+    category: "Safety",
+    excerpt: "Smart strategies for navigating unfamiliar cities after dark with confidence.",
+    date: "Nov 20, 2025",
+    image: blogNightSafetyImg,
+  },
+  {
+    slug: "europe-rail-budget",
+    title: "Europe by Rail: Budget Train Travel Guide",
+    category: "Budget Travel",
+    excerpt: "Scenic routes, rail passes, and money-saving tips for exploring Europe by train.",
+    date: "Nov 15, 2025",
+    image: blogEuropeRailImg,
+  },
+  {
+    slug: "free-things-tokyo",
+    title: "15 Free Things to Do in Tokyo",
+    category: "Budget Travel",
+    excerpt: "Temples, gardens, and vibrant neighborhoods — experience Tokyo's best without spending a yen.",
+    date: "Nov 8, 2025",
+    image: blogFreeTokyoImg,
+  },
+  {
+    slug: "india-food-guide",
+    title: "A Food Lover's Guide to India's Street Cuisine",
+    category: "Culture",
+    excerpt: "From chaat in Delhi to dosas in Chennai — a delicious journey through India's street food scene.",
+    date: "Nov 1, 2025",
+    image: blogIndiaFoodImg,
+  },
+  {
+    slug: "ethical-tourism-indigenous",
+    title: "Ethical Tourism: Respecting Indigenous Cultures",
+    category: "Culture",
+    excerpt: "How to travel responsibly and support local communities without exploiting their traditions.",
+    date: "Oct 25, 2025",
+    image: blogEthicalTourismImg,
+  },
+  {
+    slug: "southeast-asia-festivals",
+    title: "Southeast Asia's Must-See Festivals in 2026",
+    category: "Culture",
+    excerpt: "Lantern festivals, water fights, and sacred ceremonies — the most unforgettable celebrations.",
+    date: "Oct 18, 2025",
+    image: blogAsiaFestivalsImg,
+  },
+  {
+    slug: "digital-nomad-visa-guide",
+    title: "Digital Nomad Visas: Where to Apply in 2026",
+    category: "Digital Nomad",
+    excerpt: "Over 50 countries now offer remote work visas. Here are the best options for digital nomads.",
+    date: "Oct 10, 2025",
+    image: blogNomadVisaImg,
+  },
+  {
+    slug: "productivity-while-traveling",
+    title: "Staying Productive While Traveling: Tools & Tips",
+    category: "Digital Nomad",
+    excerpt: "Balance work and adventure with these proven productivity strategies for location-independent workers.",
+    date: "Oct 3, 2025",
+    image: blogProductivityImg,
   },
 ];
 
