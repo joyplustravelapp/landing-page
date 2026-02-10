@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background py-20">
+      <SEO
+        title="Terms & Conditions"
+        description="Review Joy Plus's terms and conditions. Understand the rules and guidelines for using our travel companion platform."
+      />
       <div className="container mx-auto px-4 max-w-3xl">
         <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4" /> Back to home
