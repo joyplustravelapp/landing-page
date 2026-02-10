@@ -28,7 +28,7 @@ import blogNomadVisaImg from "@/assets/blog-nomad-visa.jpg";
 import blogProductivityImg from "@/assets/blog-productivity-travel.jpg";
 import { useIncrementView } from "@/hooks/useArticleViews";
 
-const blogContent: Record<string, { title: string; category: string; date: string; content: string[]; seo?: { description: string; image?: string } }> = {
+const blogContent: Record<string, { title: string; category: string; date: string; content: string[]; seo?: { description: string; image?: string; imageAlt?: string } }> = {
   "solo-female-travel-safety-tips": {
     title: "Solo Female Travel Safety: 10 Essential Tips to Stay Safe Abroad",
     category: "Safety",
@@ -36,6 +36,7 @@ const blogContent: Record<string, { title: string; category: string; date: strin
     seo: {
       description: "Planning solo female travel? Learn 10 essential safety tips from experienced travelers worldwide.",
       image: blogSafetyImg,
+      imageAlt: "Solo female traveler walking confidently through a vibrant city street with a backpack, representing travel safety and independence abroad",
     },
     content: [
       "Solo travel is one of the most rewarding experiences you can have, but safety should always be a priority. Whether you're backpacking through Southeast Asia or exploring European cities, these tips will help you stay safe and confident on the road.",
@@ -460,7 +461,7 @@ const BlogPost = () => {
       <article className="pt-28 pb-20">
         {/* Hero */}
         <div className="relative h-[300px] md:h-[400px] overflow-hidden">
-          <img src={travelVisionImg} alt={post.title} className="w-full h-full object-cover" />
+          <img src={post.seo?.image || travelVisionImg} alt={post.seo?.imageAlt || post.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-background/60" />
         </div>
 
