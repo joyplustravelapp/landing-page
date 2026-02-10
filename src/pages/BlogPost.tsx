@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import travelVisionImg from "@/assets/travel-vision.jpg";
+import { useIncrementView } from "@/hooks/useArticleViews";
 
 const blogContent: Record<string, { title: string; category: string; date: string; content: string[] }> = {
   "safety-tips-solo-travelers": {
@@ -326,6 +327,7 @@ const blogContent: Record<string, { title: string; category: string; date: strin
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? blogContent[slug] : null;
+  const viewCount = useIncrementView(slug);
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -380,6 +382,11 @@ const BlogPost = () => {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xs font-semibold text-primary">{post.category}</span>
               <span className="text-xs text-muted-foreground">· {post.date}</span>
+              {viewCount !== null && (
+                <span className="text-xs text-muted-foreground flex items-center gap-1 ml-auto">
+                  <Eye className="w-3.5 h-3.5" /> {viewCount} {viewCount === 1 ? "view" : "views"}
+                </span>
+              )}
             </div>
 
             <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
