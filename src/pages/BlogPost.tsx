@@ -475,61 +475,69 @@ const BlogPost = () => {
         description={post.seo?.description}
         image={post.seo?.image}
         type="article"
+        publishedDate={post.date}
       />
       <Navbar />
-      <article className="pt-28 pb-20">
-        {/* Hero */}
-        <div className="relative h-[300px] md:h-[400px] overflow-hidden">
-          <img src={post.seo?.image || travelVisionImg} alt={post.seo?.imageAlt || post.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/60" />
-        </div>
+      <main>
+        <article className="pt-28 pb-20">
+          <header className="relative h-[300px] md:h-[400px] overflow-hidden">
+            <img
+              src={post.seo?.image || travelVisionImg}
+              alt={post.seo?.imageAlt || post.title}
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-background/60" />
+          </header>
 
-        <div className="container mx-auto px-4 max-w-3xl -mt-20 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl glass p-8 md:p-12"
-          >
-            <Link
-              to="/"
-              onClick={() => {
-                // Delay scroll to ensure navigation completes
-                setTimeout(() => {
-                  const blogSection = document.getElementById('blog');
-                  if (blogSection) {
-                    blogSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
-              className="btn-press inline-flex items-center gap-1.5 text-primary text-sm font-medium mb-6 hover:gap-2.5 transition-all duration-300"
+          <div className="container mx-auto px-4 max-w-3xl -mt-20 relative">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-2xl glass p-8 md:p-12"
             >
-              <ArrowLeft className="w-4 h-4" /> Back to blog
-            </Link>
+              <nav aria-label="Breadcrumb" className="mb-6">
+                <Link
+                  to="/"
+                  onClick={() => {
+                    setTimeout(() => {
+                      const blogSection = document.getElementById('blog');
+                      if (blogSection) {
+                        blogSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="btn-press inline-flex items-center gap-1.5 text-primary text-sm font-medium hover:gap-2.5 transition-all duration-300"
+                >
+                  <ArrowLeft className="w-4 h-4" /> Back to blog
+                </Link>
+              </nav>
 
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs font-semibold text-primary">{post.category}</span>
-              <span className="text-xs text-muted-foreground">· {post.date}</span>
-              {viewCount !== null && (
-                <span className="text-xs text-muted-foreground flex items-center gap-1 ml-auto">
-                  <Eye className="w-3.5 h-3.5" /> {viewCount} {viewCount === 1 ? "view" : "views"}
-                </span>
-              )}
-            </div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-xs font-semibold text-primary">{post.category}</span>
+                <time className="text-xs text-muted-foreground" dateTime={post.date}>· {post.date}</time>
+                {viewCount !== null && (
+                  <span className="text-xs text-muted-foreground flex items-center gap-1 ml-auto" aria-label={`${viewCount} views`}>
+                    <Eye className="w-3.5 h-3.5" /> {viewCount} {viewCount === 1 ? "view" : "views"}
+                  </span>
+                )}
+              </div>
 
-            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
-              {post.title}
-            </h1>
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
+                {post.title}
+              </h1>
 
-            <div className="space-y-4">
-              {post.content.map((paragraph, i) => (
-                <p key={i} className="text-muted-foreground leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </article>
+              <section className="space-y-4">
+                {post.content.map((paragraph, i) => (
+                  <p key={i} className="text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </section>
+            </motion.div>
+          </div>
+        </article>
+      </main>
       <Footer />
     </div>
   );
